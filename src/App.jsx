@@ -1,6 +1,6 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-// import Login from './pages/auth/Login';
+import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 import Home from './pages/Home';
 import FacultySignup from './pages/auth/FacultySignup';
@@ -15,9 +15,9 @@ export default function App() {
     <Router>
       <Routes>
         {/* Redirect from root '/' to '/login' */}
-        {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
 
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/facultysignup" element={<FacultySignup />} />
