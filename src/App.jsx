@@ -9,6 +9,11 @@ import VerifyOTP from './pages/auth/VerifyOTP';
 import CoursesDashboard from './pages/student/CoursesDashboard';
 import CourseDetail from './pages/student/CourseDetail';
 import ProfileDashboard from './pages/student/ProfileDashboard';
+import AcademicDashboard from './pages/academic/AcademicDashboard';
+import TotalCourses from './pages/academic/TotalCourses';
+import CentersManagement from './pages/academic/CentersManagement';
+import FacultiesManagement from './pages/academic/FacultiesManagement';
+import PendingApprovals from './pages/academic/PendingApprovals';
 
 export default function App() {
   return (
@@ -26,6 +31,11 @@ export default function App() {
         <Route path="/student/dash" element={<CoursesDashboard />} />
         <Route path="/student/profile" element={<ProfileDashboard />} />
         <Route path="/student/course/:id" element={<CourseDetail />} />
+        <Route path="/academic/dash" element={<AcademicDashboard />} />
+        <Route path="/academic/totalcourses" element={<TotalCourses />} />
+        <Route path="/academic/centers" element={<CentersManagement />} />
+        <Route path="/academic/faculties" element={<FacultiesManagement />} />
+        <Route path="/academic/approvals" element={<PendingApprovals />} />
       </Routes>
     </Router>
   );

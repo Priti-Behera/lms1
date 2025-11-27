@@ -52,7 +52,7 @@ export default function CoursesDashboard() {
 
     // Search by name
     if (searchQuery) {
-      filtered = filtered.filter(c => 
+      filtered = filtered.filter(c =>
         c.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
@@ -74,7 +74,7 @@ export default function CoursesDashboard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 md:p-6">
       {/* Header */}
-      <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+      <header className="flex flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>
           <h1 className="text-3xl font-bold text-gray-800">Cybernetics LMS</h1>
           <p className="text-lg text-gray-600 mt-1">Welcome back, <span className="font-semibold">{user.firstName}</span>!</p>
@@ -110,37 +110,34 @@ export default function CoursesDashboard() {
 
       {/* Search + Filter */}
       <section className="mb-6">
-       <div className="bg-white rounded-xl shadow-lg p-3 gap-4 w-fit">
-  <div className="flex items-center gap-3">
+        <div className="bg-white rounded-xl shadow-lg p-3 gap-4 w-fit">
+          <div className="flex items-center gap-3">
+            {/* Filter Dropdown */}
+            <select
+              value={selectedDuration}
+              onChange={(e) => setSelectedDuration(e.target.value)}
+               className="border border-gray-300 rounded-lg px-3 py-2 min-w-[120px]"
+            >
+              <option value="all">All Durations</option>
+              <option value="1">1 Month</option>
+              <option value="3">3 Months</option>
+              <option value="6">6 Months</option>
+              <option value="12">12 Months</option>
+            </select>
 
-    {/* Filter Dropdown */}
-    <select 
-      value={selectedDuration} 
-      onChange={(e) => setSelectedDuration(e.target.value)}
-      className="border border-gray-300 rounded-lg px-3 py-2 min-w-[120px]"
-    >
-      <option value="all">All Durations</option>
-      <option value="1">1 Month</option>
-      <option value="3">3 Months</option>
-      <option value="6">6 Months</option>
-      <option value="12">12 Months</option>
-    </select>
-
-    {/* Search Field */}
-    <div className="relative min-w-[200px]">
-      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-      />
-    </div>
-
-  </div>
-</div>
-
+            {/* Search Field */}
+            <div className="relative min-w-[200px]">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* My Courses */}
@@ -164,7 +161,7 @@ export default function CoursesDashboard() {
             No courses found matching your filters.
           </div>
         ) : (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {coursesToShow.map((course) => (
               <div
                 key={course.id}
@@ -193,9 +190,8 @@ export default function CoursesDashboard() {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div
-                        className={`h-2 rounded-full transition-all ${
-                          course.progress === 100 ? 'bg-green-500' : 'bg-blue-600'
-                        }`}
+                        className={`h-2 rounded-full transition-all ${course.progress === 100 ? 'bg-green-500' : 'bg-blue-600'
+                          }`}
                         style={{ width: `${course.progress}%` }}
                       />
                     </div>
@@ -221,11 +217,10 @@ export default function CoursesDashboard() {
                       e.stopPropagation();
                       handleCourseClick(course.id);
                     }}
-                    className={`w-full py-2 rounded-lg font-medium transition ${
-                      course.progress === 100
+                    className={`w-full py-2 rounded-lg font-medium transition ${course.progress === 100
                         ? 'bg-gray-200 text-gray-600 cursor-not-allowed'
                         : 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700'
-                    }`}
+                      }`}
                     disabled={course.progress === 100}
                   >
                     {course.progress === 100 ? 'Completed' : 'Continue Learning'}
@@ -266,9 +261,8 @@ export default function CoursesDashboard() {
             {announcements.map((ann, i) => (
               <div
                 key={i}
-                className={`p-4 rounded-xl text-white flex items-center gap-3 ${
-                  ann.type === 'maintenance' ? 'bg-red-500' : 'bg-indigo-600'
-                }`}
+                className={`p-4 rounded-xl text-white flex items-center gap-3 ${ann.type === 'maintenance' ? 'bg-red-500' : 'bg-indigo-600'
+                  }`}
               >
                 <AlertCircle className="w-5 h-5" />
                 <span>{ann.text}</span>
