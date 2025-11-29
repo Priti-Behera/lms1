@@ -111,9 +111,12 @@ const OTPVerification = () => {
 
           <div className="text-center text-xs text-gray-500">
             <p>Didn't receive the code?</p>
-            <button className="text-blue-600 hover:underline font-medium mt-1">
+             <Link to="/verify-email-otp" className="text-sm text-blue-600 hover:underline">
               Try another method
-            </button>
+            </Link>
+            {/* <button className="text-blue-600 hover:underline font-medium mt-1">
+              Try another method
+            </button> */}
           </div>
         </div>
       </div>

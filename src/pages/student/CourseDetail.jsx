@@ -2,7 +2,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { 
   Play, FileText, Calendar, Clock, CheckCircle, 
-  Lock, CreditCard, Users, Video, BookOpen, Award 
+  Lock, CreditCard, Users, Video, BookOpen, Award
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -44,7 +44,7 @@ export default function CourseDetail() {
     instructor: 'John Doe',
     duration: '3 Months',
     price: '₹12,999',
-    thumbnail: thumbnailMap[id] || reactThumb,
+    thumbnail: thumbnailMap[id] || oip,
     rating: 4.8,
     students: 1234,
     description: 'Master modern web development with hands-on projects, real-world scenarios, and expert guidance.',
