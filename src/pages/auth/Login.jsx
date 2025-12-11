@@ -124,7 +124,7 @@ const Signup = () => {
 
               <button
                 onClick={() => navigate("/student/dash")}
-                className="w-full bg-gradient-to-r from-[#1e40af] to-green-600 text-white py-5 rounded-xl font-bold text-lg hover:shadow-xl transition">
+                className="w-full bg-gradient-to-r from-[#1e40af] to-green-600 text-white py-5 rounded-xl font-bold text-lg hover:shadow-xl transition cursor-pointer">
                 Login to Dashboard
               </button>
             </form>
@@ -134,7 +134,7 @@ const Signup = () => {
                 Don't have an account?{" "}
                 <button
                   onClick={() => navigate("/signup")}
-                  className="text-[#1e40af] font-bold hover:underline"
+                  className="text-[#1e40af] font-bold hover:underline cursor-pointer"
                 >
                   Sign Up Free
                 </button>

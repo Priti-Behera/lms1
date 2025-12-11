@@ -48,17 +48,20 @@ export default function App() {
         <Route path="/academicsignup" element={<AcademicSignup />} />
         <Route path="/otp" element={<VerifyOTP />} />
         <Route path="/verify-email-otp"element={<VerifyEmailOTP />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        {/* Student Routes */}
         <Route path="/student/courses" element={<AllCourses />} />
         <Route path="/student/dash" element={<CoursesDashboard />} />
         <Route path="/student/profile" element={<ProfileDashboard />} />
         <Route path="/student/course/:id" element={<CourseDetail />} />
+        {/* Faculty Routes */}
         <Route path="/faculty/home" element={<FacultyHome />} />
         <Route path="/faculty/course/:id" element={<CourseDetailsFaculty />} />
         <Route path="/faculty/exams" element={<ExamManagement />} />
         <Route path="/faculty/assignments" element={<AssignmentManagement />} />
         <Route path="/faculty/profile" element={<FacultyProfile />} />
+        {/* Admin Routes */}
         <Route path="/Adminlogin" element={<AdminLogin />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/students" element={<ViewStudentDetails />} />
         <Route path="/admin/faculty" element={<FacultyManagement />} />
@@ -66,12 +69,13 @@ export default function App() {
         <Route path="/admin/courses" element={<CoursesManagement />} />
         <Route path="/admin/course/:id" element={<CourseDetailsAdmin />} />
         <Route path="/admin/settings" element={<SettingsAdmin />} />
-        
+        {/* Academic Admin Routes */}
         <Route path="/academic/dash" element={<AcademicDashboard />} />
         <Route path="/academic/totalcourses" element={<TotalCourses />} />
         <Route path="/academic/centers" element={<CentersManagement />} />
         <Route path="/academic/faculties" element={<FacultiesManagement />} />
         <Route path="/academic/approvals" element={<PendingApprovals />} />
+        {/* Super Admin Routes */}
         <Route path="/superadmin/dash" element={<SuperAdminDashboard />} />
         <Route path="/academic-admins" element={<AcademicAdminsPage />} />
         <Route path="/courses" element={<CoursesManagementPage />} />
