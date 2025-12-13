@@ -9,6 +9,7 @@ import VerifyOTP from './pages/auth/VerifyOTP';
 import CoursesDashboard from './pages/student/CoursesDashboard';
 import CourseDetail from './pages/student/CourseDetail';
 import ProfileDashboard from './pages/student/ProfileDashboard';
+import StudentSettings from './pages/student/StudentSettings';
 import FacultyHome from './pages/faculty/FacultyHome';
 import CourseDetailsFaculty from './pages/faculty/CourseDetailsFaculty';
 import ExamManagement from './pages/faculty/ExamManagement';
@@ -48,6 +49,7 @@ export default function App() {
         <Route path="/student/dash" element={<CoursesDashboard />} />
         <Route path="/student/profile" element={<ProfileDashboard />} />
         <Route path="/student/course/:id" element={<CourseDetail />} />
+        <Route path="/student/settings" element={<StudentSettings />} />
         <Route path="/faculty/home" element={<FacultyHome />} />
         <Route path="/faculty/course/:id" element={<CourseDetailsFaculty />} />
         <Route path="/faculty/exams" element={<ExamManagement />} />
@@ -62,7 +64,6 @@ export default function App() {
         <Route path="/admin/courses" element={<CoursesManagement />} />
         <Route path="/admin/course/:id" element={<CourseDetailsAdmin />} />
         <Route path="/admin/settings" element={<SettingsAdmin />} />
-        
         <Route path="/academic/dash" element={<AcademicDashboard />} />
         <Route path="/academic/totalcourses" element={<TotalCourses />} />
         <Route path="/academic/centers" element={<CentersManagement />} />
